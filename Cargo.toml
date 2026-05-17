@@ -1,0 +1,17 @@
+[package]
+name = "gmsv_dotenv"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "gmsv_dotenv"
+crate-type = ["cdylib"]
+
+[dependencies]
+gmod = { git = "https://github.com/WilliamVenner/gmod-rs", default-features = false }
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+strip = true
